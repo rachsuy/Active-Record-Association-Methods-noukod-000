@@ -14,7 +14,7 @@ class Artist < ActiveRecord::Base
 
   def genre_count
     #return the number of genres associated with the artist
-    genres = Songs.collect do |song|
+    genres = self.songs.collect do |song|
        song.genre
     end
     genres.compact.count
